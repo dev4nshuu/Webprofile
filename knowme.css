@@ -1,0 +1,208 @@
+*{
+    margin: 0;
+    padding: 0;
+
+    
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    background-image: linear-gradient(to right, #e5a1e2, #c5b3fa, #a3c4ff, #8bd1ff, #87dbf4);
+}
+
+p{
+    font-size: 20px;
+    font-family: cursive;
+}
+
+h1{
+    font-size: 60px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+header{
+    background: linear-gradient(to right, #e5a1e2, #c5b3fa, #a3c4ff, #8bd1ff, #87dbf4);
+    z-index: 4;
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 20px;
+    font-size: 1.25rem;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+
+}
+
+#back1{
+    margin-top: 50px;
+}
+
+hr{
+    margin-top: 90px;
+    border: 2px solid black;
+    border-radius: 50%;
+    margin-bottom: 50px;
+}
+
+#bigline{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+#info{
+    margin-top: 50px;
+    width:60%;
+    text-align: center;
+}
+
+.back{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#webd{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width:897.6px;
+}
+
+
+
+#skill{
+    font-size: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 168.8px;
+    display: flex;
+    align-items: center;
+}
+
+li{
+    list-style-type: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+#skillist{
+    display: flex;
+    align-items: center;
+}
+
+#skilldesc{
+    width: 897.6px;
+    margin-top: 30px;
+}
+
+#skillogo{
+    height: 30px;
+    margin-left: 8px;
+    margin-bottom: 0;
+    position: relative;
+    top: 8px;
+}
+
+#smallline{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+}
+
+#back3{
+    width:100%;
+}
+
+#interest{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+}
+
+#hobbiecontent{
+    text-align: right;
+    font-size: 20px;
+}
+
+#hobbieicon{
+    height: 50pX;
+    position: relative;
+    top: 8px;
+}
+
+#line{
+    width: 100%;
+    display: flex;
+    border-radius: 0;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+
+#container{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    margin-top: 0;
+    padding-top: 0;
+
+}
+
+footer{
+    
+    background-color:navy;
+}
+
+#foot{
+    font-size: 15px;
+}
+
+#reach{
+    font-size: 15px;
+}
+
+#stay{
+    font-size: 15px;
+}
+
+#icon{
+    width: 20%;
+}
+
+.content{
+    width: 40%;
+    padding: 15px;
+    height: 100%;
+    color: white;
+    margin-bottom: 0px;
+}
+
+
+#smalline{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#social{
+    display: flex;
+}
+
+#stay{
+    margin-bottom: 15px;
+
+}
