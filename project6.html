@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Network Speed Detector</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: skyblue;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #speedResult {
+        margin-top: 20px;
+        font-size: 18px;
+    }
+    button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+        outline: none;
+    }
+</style>
+</head>
+<body>
+<div id="container">
+    <h2>Network Speed Detector</h2>
+    <button onclick="detectNetworkSpeed()">Detect Speed</button>
+    <p id="speedResult"></p>
+</div>
+
+<script>
+function detectNetworkSpeed() {
+    var startTime, endTime;
+    var fileSizeMB = 1; 
+
+    startTime = performance.now();
+
+    $.ajax({
+        url: 'https://code.jquery.com/jquery-3.6.0.min.js',
+        type: 'GET',
+        success: function() {
+            endTime = performance.now();
+            var duration = (endTime - startTime) / 1000; 
+            var fileSizeMBps = fileSizeMB / duration; 
+            document.getElementById('speedResult').innerText = 'Download speed: ' + fileSizeMBps.toFixed(2) + ' Mbps';
+        },
+        error: function() {
+            document.getElementById('speedResult').innerText = 'Error occurred while detecting speed.';
+        }
+    });
+}
+</script>
+</body>
+</html>
