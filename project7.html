@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analog Clock</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: skyblue;
+    }
+    
+    .clock {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: white;
+        position: relative;
+    }
+    
+    .hour,
+    .minute,
+    .second {
+        position: absolute;
+        background-color: black;
+        transform-origin: bottom center;
+    }
+    
+    .hour {
+        width: 6px;
+        height: 50px;
+        top: 50px;
+        left: 97px;
+    }
+    
+    .minute {
+        width: 4px;
+        height: 70px;
+        top: 30px;
+        left: 98px;
+    }
+    
+    .second {
+        width: 2px;
+        height: 90px;
+        top: 10px;
+        left: 99px;
+    }
+    
+    .number {
+        position: absolute;
+        font-size: 12px;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+<div class="clock">
+    <div class="hour" id="hour"></div>
+    <div class="minute" id="minute"></div>
+    <div class="second" id="second"></div>
+    <div class="number" style="top: 10px; left: 90px;">12</div>
+    <div class="number" style="top: 30px; left: 165px;">1</div>
+    <div class="number" style="top: 70px; left: 170px;">2</div>
+    <div class="number" style="top: 110px; left: 160px;">3</div>
+    <div class="number" style="top: 160px; left: 90px;">6</div>
+    <div class="number" style="top: 110px; left: 20px;">9</div>
+    <div class="number" style="top: 70px; left: 10px;">10</div>
+    <div class="number" style="top: 30px; left: 15px;">11</div>
+</div>
+
+<script>
+    function updateClock() {
+        const now = new Date();
+        const hour = now.getHours();
+        const minute = now.getMinutes();
+        const second = now.getSeconds();
+
+        const hourDegree = (hour % 12) * 30 + minute / 2;
+        const minuteDegree = minute * 6 + second / 10;
+        const secondDegree = second * 6;
+
+        document.getElementById('hour').style.transform = `rotate(${hourDegree}deg)`;
+        document.getElementById('minute').style.transform = `rotate(${minuteDegree}deg)`;
+        document.getElementById('second').style.transform = `rotate(${secondDegree}deg)`;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+</script>
+</body>
+</html>
