@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Grade Calculator</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: skyblue;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .container {
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .input-label {
+    margin-bottom: 10px;
+  }
+  input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  button {
+    background-color: rgb(30, 184, 255);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: royalblue;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h2> Grade Calculator</h2>
+  <div class="input-label">Enter marks of 7 subjects:</div>
+  <input type="number" id="mark1" placeholder="Subject 1">
+  <input type="number" id="mark2" placeholder="Subject 2">
+  <input type="number" id="mark3" placeholder="Subject 3">
+  <input type="number" id="mark4" placeholder="Subject 4">
+  <input type="number" id="mark5" placeholder="Subject 5">
+  <input type="number" id="mark6" placeholder="Subject 6">
+  <input type="number" id="mark7" placeholder="Subject 7">
+  <button onclick="calculateGrade()">Calculate</button>
+  <div id="result" style="margin-top: 20px;"></div>
+</div>
+
+<script>
+  function calculateGrade() {
+    var marks = [];
+    marks.push(parseFloat(document.getElementById('mark1').value));
+    marks.push(parseFloat(document.getElementById('mark2').value));
+    marks.push(parseFloat(document.getElementById('mark3').value));
+    marks.push(parseFloat(document.getElementById('mark4').value));
+    marks.push(parseFloat(document.getElementById('mark5').value));
+    marks.push(parseFloat(document.getElementById('mark6').value));
+    marks.push(parseFloat(document.getElementById('mark7').value));
+
+    var totalMarks = marks.reduce((acc, curr) => acc + curr, 0);
+    var percentage = (totalMarks / (marks.length * 100)) * 100;
+    var passFailStatus = (percentage >= 40) ? "Pass" : "Fail";
+
+    document.getElementById('result').innerHTML = `
+      <p>Percentage: ${percentage.toFixed(2)}%</p>
+      <p>Status: ${passFailStatus}</p>
+    `;
+  }
+</script>
+</body>
+</html>
